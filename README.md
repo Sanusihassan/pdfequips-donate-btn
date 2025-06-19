@@ -1,48 +1,93 @@
-# Astro Starter Kit: Basics
+# Astro Donate Button
 
-```sh
-npm create astro@latest -- --template basics
+A modern, animated donate button component for Astro.js with multi-language support and beautiful SCSS styling.
+
+## Features
+
+- 🎨 Modern gradient designs with smooth animations
+- 🌍 Multi-language support (EN, AR, ES, FR, HI, ZH)
+- 📱 Responsive design with multiple sizes
+- 🎭 Four style variants (primary, secondary, outline, ghost)
+- ♿ Accessible with proper focus states
+- 🔄 Smooth hover and click animations
+- 💝 Beautiful heart icon that pulses on hover
+
+## Installation
+
+```bash
+npm install @yourorg/astro-donate-button
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Usage
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### In Astro Components
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+```astro
+---
+import { DonateButton } from '@yourorg/astro-donate-button';
+import '@yourorg/astro-donate-button/styles';
+---
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+<DonateButton 
+  href="checkout/?subscription=donate"
+  size="lg"
+  variant="primary"
+  lang="en"
+  client:load
+/>
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Props
 
-## 🧞 Commands
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | string | `"checkout/?subscription=donate"` | The link destination |
+| `size` | `'sm' \| 'md' \| 'lg' \| 'xl'` | `'lg'` | Button size |
+| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost'` | `'primary'` | Button style variant |
+| `target` | string | `'_self'` | Link target attribute |
+| `lang` | `'en' \| 'ar' \| 'es' \| 'fr' \| 'hi' \| 'zh'` | `'en'` | Language for button text |
+| `className` | string | `''` | Additional CSS classes |
 
-All commands are run from the root of the project, from a terminal:
+### Supported Languages
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- `en` - English: "Donate"
+- `ar` - Arabic: "تبرع"
+- `es` - Spanish: "Donar"
+- `fr` - French: "Faire un don"
+- `hi` - Hindi: "दान करें"
+- `zh` - Chinese: "捐赠"
 
-## 👀 Want to learn more?
+### Style Variants
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Primary**: Pink to rose gradient
+- **Secondary**: Purple to indigo gradient  
+- **Outline**: Transparent with pink border
+- **Ghost**: Minimal style with hover effect
+
+## Customization
+
+You can override the default styles by importing your own SCSS file after the component styles:
+
+```astro
+---
+import '@yourorg/astro-donate-button/styles';
+import './custom-donate-styles.scss';
+---
+```
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Build the package
+npm run build
+
+# Watch for changes during development
+npm run dev
+```
+
+## License
+
+MIT
