@@ -11,5 +11,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  build: {
+    // Customize output if needed
+    format: "preserve"
+  },
 });

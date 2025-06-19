@@ -1,7 +1,7 @@
 {
   "name": "pdfequips-donate-btn",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A modern, animated donate button component for Astro.js with multi-language support",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,6 +29,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "build:lib": "tsc --outDir dist && npm run build:styles",
+    "build:styles": "sass src/styles:dist --no-source-map && tailwindcss -i src/styles/input.css -o dist/styles.css --minify",
     "astro": "astro"
   },
   "dependencies": {
