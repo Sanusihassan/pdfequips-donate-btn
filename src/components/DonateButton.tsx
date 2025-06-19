@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Heart } from 'lucide-react';
-import "../styles/global.css";
 export interface DonateButtonProps {
   href?: string;
   className?: string;
@@ -74,10 +73,10 @@ const DonateButton: React.FC<DonateButtonProps> = ({
         transform transition-transform duration-500
         ${isHovered ? 'translate-x-full' : '-translate-x-full'}
       `} />
-      
+
       {/* Button content */}
       <div className="relative flex items-center justify-center gap-2">
-        <Heart 
+        <Heart
           className={`
             transition-all duration-300
             ${isHovered ? 'scale-110 animate-pulse' : 'scale-100'}
